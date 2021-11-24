@@ -1,12 +1,13 @@
-package part1
+package chapter2
 
 import (
+	"ProgrammerXiaohuiGolang/chapter2/part1"
 	"fmt"
 	"testing"
 )
 
 func TestNewMyArray(t *testing.T) {
-	myArray := NewMyArray(4)
+	myArray := part1.NewMyArray(4)
 	myArray.Insert(0,0)
 	myArray.Insert(1,1)
 	myArray.Insert(2,2)
@@ -14,6 +15,6 @@ func TestNewMyArray(t *testing.T) {
 	myArray.Insert(4,4)
 	myArray.Insert(5,5)
 	myArray.Delete(3)
-	fmt.Println(myArray.array)
+	fmt.Println(myArray.Array)
 	myArray.Output()
 }
