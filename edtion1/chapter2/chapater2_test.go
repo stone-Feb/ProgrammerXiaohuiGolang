@@ -1,7 +1,7 @@
 package chapter2
 
 import (
-	"ProgrammerXiaohuiGolang/chapter2/part1"
+	"ProgrammerXiaohuiGolang/edtion1/chapter2/part1"
 	"fmt"
 	"testing"
 )
