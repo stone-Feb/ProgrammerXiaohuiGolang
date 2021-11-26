@@ -3,6 +3,7 @@ package chapter2
 import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter2/part1"
 	"ProgrammerXiaohuiGolang/edtion1/chapter2/part2"
+	"ProgrammerXiaohuiGolang/edtion1/chapter2/part3"
 	"fmt"
 	"testing"
 )
@@ -29,4 +30,19 @@ func TestNewMyLinkedLink(t *testing.T)  {
 	myLinkedLink.Insert(1,2)
 	myLinkedLink.Remove(3)
 	myLinkedLink.Output()
+}
+
+func TestNewQueue(t *testing.T)  {
+	myQueue := part3.NewMyQueue(6)
+	myQueue.EnQueue(1)
+	myQueue.EnQueue(2)
+	myQueue.EnQueue(3)
+	myQueue.EnQueue(4)
+	myQueue.DeQueue()
+	myQueue.DeQueue()
+	myQueue.EnQueue(4)
+	myQueue.EnQueue(5)
+	myQueue.EnQueue(6)
+	//myQueue.EnQueue(7)
+	myQueue.Output()
 }
