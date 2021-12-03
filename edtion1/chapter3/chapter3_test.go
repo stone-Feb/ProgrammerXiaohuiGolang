@@ -47,3 +47,22 @@ func TestTestNewBinaryTreeWithStack(t *testing.T)  {
 	//栈实现遍历
 	part2.PreOrderTraversalWithStack(treeNode)
 }
+
+func TestBinaryTreeTraversalLevel(t *testing.T)  {
+	//生成线性序列
+	l := list.New()
+	l.PushBack(1)
+	l.PushBack(2)
+	l.PushBack(3)
+	l.PushBack(nil)
+	l.PushBack(nil)
+	l.PushBack(4)
+	l.PushBack(nil)
+	l.PushBack(nil)
+	l.PushBack(5)
+	l.PushBack(nil)
+	l.PushBack(6)
+	//生成树
+	treeNode := part2.CreateBinaryTree(l)
+	part2.LevelOrderTraversal(treeNode)
+}
