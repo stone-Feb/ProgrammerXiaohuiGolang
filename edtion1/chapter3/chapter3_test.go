@@ -2,7 +2,9 @@ package chapter3
 
 import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part2"
+	"ProgrammerXiaohuiGolang/edtion1/chapter3/part3"
 	"container/list"
+	"fmt"
 	"testing"
 )
 
@@ -65,4 +67,14 @@ func TestBinaryTreeTraversalLevel(t *testing.T)  {
 	//生成树
 	treeNode := part2.CreateBinaryTree(l)
 	part2.LevelOrderTraversal(treeNode)
+}
+
+func TestMinHeap(t *testing.T)  {
+	arr := []int{1,3,2,6,5,7,8,9,10,0}
+	part3.UpAdjust(arr)
+	fmt.Println(arr)
+
+	arr2 := []int{7,1,3,10,5,2,8,9,6}
+	part3.BuildHeap(arr2)
+	fmt.Println(arr2)
 }
