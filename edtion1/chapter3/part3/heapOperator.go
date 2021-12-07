@@ -1,9 +1,9 @@
 package part3
 
-//二叉堆操作
+//最小二叉堆操作
 //二叉堆是顺序存储方式，所以节点都保存在数组中。父节点下标是 p 左孩子：2*p+1 右孩子 2*p+2
 
-// UpAdjust 上浮调整
+// UpAdjust 插入节点
 func UpAdjust(arr []int) {
 	childIndex := len(arr) - 1
 	parentIndex := (childIndex - 1) / 2
@@ -19,7 +19,7 @@ func UpAdjust(arr []int) {
 	arr[childIndex] = temp
 }
 
-// DownAdjust 某一个父节点下沉
+// DownAdjust 删除节点
 func DownAdjust(arr []int, parentIndex int) {
 	temp := arr[parentIndex]
 	childIndex := 2*parentIndex + 1
@@ -40,7 +40,7 @@ func DownAdjust(arr []int, parentIndex int) {
 	arr[parentIndex] = temp
 }
 
-// BuildHeap 构建堆
+// BuildHeap 无序二叉树构建二叉堆
 func BuildHeap(arr []int) {
 	//从最后一个非叶子节点开始，依次下沉调整
 	for i := len(arr) / 2; i >= 0; i-- {

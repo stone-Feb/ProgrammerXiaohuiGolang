@@ -3,6 +3,7 @@ package chapter3
 import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part2"
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part3"
+	"ProgrammerXiaohuiGolang/edtion1/chapter3/part4"
 	"container/list"
 	"fmt"
 	"testing"
@@ -70,11 +71,29 @@ func TestBinaryTreeTraversalLevel(t *testing.T)  {
 }
 
 func TestMinHeap(t *testing.T)  {
+	//最小堆,插入节点
 	arr := []int{1,3,2,6,5,7,8,9,10,0}
 	part3.UpAdjust(arr)
 	fmt.Println(arr)
 
+	//无序二叉堆构建最小堆
 	arr2 := []int{7,1,3,10,5,2,8,9,6}
 	part3.BuildHeap(arr2)
 	fmt.Println(arr2)
+}
+
+func TestPriorityQueue(t *testing.T)  {
+	queue:= part4.NewPriorityQueue()
+	queue.EnQueue(1)
+	queue.EnQueue(2)
+	queue.EnQueue(3)
+	queue.EnQueue(4)
+	queue.EnQueue(5)
+	queue.OutPut()
+	fmt.Println(queue.DeQueue())
+	fmt.Println(queue.DeQueue())
+	fmt.Println(queue.DeQueue())
+	//fmt.Println(queue.DeQueue())
+	//fmt.Println(queue.DeQueue())
+	queue.OutPut()
 }
