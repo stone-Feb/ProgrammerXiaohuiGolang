@@ -1,6 +1,10 @@
 # chengxuyuanxiaohui
 漫画算法代码片段GoLang实现
 
+原著：
+第一版：https://github.com/bjweimengshu/ProgrammerXiaohui
+第二版：https://github.com/bjweimengshu/ProgrammerXiaohui-2
+
 ## 数据结构一览图
 
 ![img.png](img.png)
