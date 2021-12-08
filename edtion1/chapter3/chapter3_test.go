@@ -4,12 +4,13 @@ import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part2"
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part3"
 	"ProgrammerXiaohuiGolang/edtion1/chapter3/part4"
+	"container/heap"
 	"container/list"
 	"fmt"
 	"testing"
 )
 
-func TestNewBinaryTree(t *testing.T)  {
+func TestNewBinaryTree(t *testing.T) {
 	l := list.New()
 	l.PushBack(1)
 	l.PushBack(2)
@@ -31,7 +32,7 @@ func TestNewBinaryTree(t *testing.T)  {
 	part2.PostOrderTraversal(treeNode)
 }
 
-func TestTestNewBinaryTreeWithStack(t *testing.T)  {
+func TestTestNewBinaryTreeWithStack(t *testing.T) {
 	//生成线性序列
 	l := list.New()
 	l.PushBack(1)
@@ -51,7 +52,7 @@ func TestTestNewBinaryTreeWithStack(t *testing.T)  {
 	part2.PreOrderTraversalWithStack(treeNode)
 }
 
-func TestBinaryTreeTraversalLevel(t *testing.T)  {
+func TestBinaryTreeTraversalLevel(t *testing.T) {
 	//生成线性序列
 	l := list.New()
 	l.PushBack(1)
@@ -70,20 +71,20 @@ func TestBinaryTreeTraversalLevel(t *testing.T)  {
 	part2.LevelOrderTraversal(treeNode)
 }
 
-func TestMinHeap(t *testing.T)  {
+func TestMinHeap(t *testing.T) {
 	//最小堆,插入节点
-	arr := []int{1,3,2,6,5,7,8,9,10,0}
+	arr := []int{1, 3, 2, 6, 5, 7, 8, 9, 10, 0}
 	part3.UpAdjust(arr)
 	fmt.Println(arr)
 
 	//无序二叉堆构建最小堆
-	arr2 := []int{7,1,3,10,5,2,8,9,6}
+	arr2 := []int{7, 1, 3, 10, 5, 2, 8, 9, 6}
 	part3.BuildHeap(arr2)
 	fmt.Println(arr2)
 }
 
-func TestPriorityQueue(t *testing.T)  {
-	queue:= part4.NewPriorityQueue()
+func TestPriorityQueue(t *testing.T) {
+	queue := part4.NewPriorityQueue()
 	queue.EnQueue(1)
 	queue.EnQueue(2)
 	queue.EnQueue(3)
@@ -96,4 +97,27 @@ func TestPriorityQueue(t *testing.T)  {
 	//fmt.Println(queue.DeQueue())
 	//fmt.Println(queue.DeQueue())
 	queue.OutPut()
+}
+
+func TestHeap(t *testing.T) {
+	h := &part4.IntHeap{2, 1, 5}
+	heap.Init(h)
+	heap.Push(h, 3)
+	fmt.Printf("minimum: %d\n", (*h)[0])
+	for h.Len() > 0 {
+		fmt.Printf("%d ", heap.Pop(h))
+	}
+}
+
+//为基本类型添加方法
+type inta []int
+
+func (i *inta) push(j int) {
+	*i = append(*i, j)
+	fmt.Println(i)
+}
+
+func TestInt(t *testing.T)  {
+	i := &inta{2,1,1}
+	i.push(3)
 }
