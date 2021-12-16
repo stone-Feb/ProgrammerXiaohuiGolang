@@ -13,8 +13,14 @@ func TestBubbleSort(t *testing.T)  {
 	fmt.Println(arr)
 }
 
+//鸡尾酒排序
 func TestCockTailSort(t *testing.T)  {
 	arr := []int{2,3,4,5,6,7,8,1}
 	part2.CockTailSort(arr)
 	fmt.Println(arr)
+}
+
+func TestStr(t *testing.T)  {
+	str := "oJQRhxPwOAYkup8cAd-Vjg0htVJU"
+	fmt.Println(len(str))
 }
