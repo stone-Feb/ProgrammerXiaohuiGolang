@@ -2,6 +2,7 @@ package chapter4
 
 import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part2"
+	"ProgrammerXiaohuiGolang/edtion1/chapter4/part3"
 	"fmt"
 	"testing"
 )
@@ -23,4 +24,11 @@ func TestCockTailSort(t *testing.T)  {
 func TestStr(t *testing.T)  {
 	str := "oJQRhxPwOAYkup8cAd-Vjg0htVJU"
 	fmt.Println(len(str))
+}
+
+func TestQuickSort(t *testing.T)  {
+	arr := []int{4,4,6,5,3,2,8,1}
+	//arr := []int{4,7,6,5,3,2,8,1}
+	part3.QuickSort(arr , 0 , len(arr)-1)
+	fmt.Println(arr)
 }
