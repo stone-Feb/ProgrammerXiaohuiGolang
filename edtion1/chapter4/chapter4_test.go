@@ -3,6 +3,7 @@ package chapter4
 import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part2"
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part3"
+	"ProgrammerXiaohuiGolang/edtion1/chapter4/part4"
 	"fmt"
 	"testing"
 )
@@ -31,5 +32,11 @@ func TestQuickSort(t *testing.T)  {
 	//arr := []int{4,7,6,5,3,2,8,1}
 	//part3.QuickSort(arr , 0 , len(arr)-1)
 	part3.QuickSortWithStack(arr , 0 , len(arr)-1)
+	fmt.Println(arr)
+}
+
+func TestHeapSort(t *testing.T)  {
+	arr := []int{4,4,6,5,3,2,8,1}
+	part4.HeapSort(arr)
 	fmt.Println(arr)
 }
