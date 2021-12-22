@@ -4,6 +4,7 @@ import (
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part2"
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part3"
 	"ProgrammerXiaohuiGolang/edtion1/chapter4/part4"
+	"ProgrammerXiaohuiGolang/edtion1/chapter4/part5"
 	"fmt"
 	"testing"
 )
@@ -39,4 +40,12 @@ func TestHeapSort(t *testing.T)  {
 	arr := []int{4,4,6,5,3,2,8,1}
 	part4.HeapSort(arr)
 	fmt.Println(arr)
+}
+
+func TestCountSort(t *testing.T)  {
+	//arr := []int{4,4,6,5,3,2,8,1,7,5,6,0,10}
+	//part5.CountSort(arr)
+
+	arr2 := []int{95,94,91,98,99,90,99,93,91,92}
+	part5.CountSortV2(arr2)
 }
