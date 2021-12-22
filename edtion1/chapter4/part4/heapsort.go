@@ -1,7 +1,5 @@
 package part4
 
-import "fmt"
-
 //堆排序：无序数列先调整为最小堆，删除推顶，下沉调整
 //顺序存储方式的二叉树：leftChild = 2 * parent + 1 rightChild = 2 * parent + 2
 
@@ -10,14 +8,14 @@ func HeapSort(arr []int) {
 	for i := (len(arr) - 2) / 2; i >= 0; i-- {
 		downAdjust(arr, i, len(arr))
 	}
-	fmt.Println("first :", arr)
-	//2.循环交换集合尾部元素到堆顶，并调节堆产生新的堆顶
-	for i := len(arr) - 1; i > 0; i-- {
-		//堆顶出堆
-		arr[i], arr[0] = arr[0], arr[i]
-		//下沉调整最大堆
-		downAdjust(arr, 0, i)
-	}
+
+	////2.循环交换集合尾部元素到堆顶，并调节堆产生新的堆顶
+	//for i := len(arr) - 1; i > 0; i-- {
+	//	//堆顶出堆
+	//	arr[i], arr[0] = arr[0], arr[i]
+	//	//下沉调整最大堆
+	//	downAdjust(arr, 0, i)
+	//}
 }
 
 /**
@@ -36,11 +34,11 @@ func downAdjust(arr []int, parentIndex, length int) {
 		if childIndex+1 < length && arr[childIndex+1] > arr[childIndex] {
 			childIndex++
 		}
-		//如果父节点>=任一孩子节点，直接跳出
+		//如果父节点>=任一孩子节点，该节点不需要下沉，直接跳出
 		if temp >= arr[childIndex] {
 			break
 		}
-		//交换值
+		//交换值，不需要真正交换原因 arr[parentIndex] = temp 最后附值
 		arr[parentIndex] = arr[childIndex]
 		parentIndex = childIndex
 		childIndex = 2*childIndex + 1
